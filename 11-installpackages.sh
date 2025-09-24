@@ -29,8 +29,6 @@ then
 else
     echo -e "$G You are root user.$N"
 fi
-dnf install mysql -f
-VALIDATE $? "Inatalling MySql"
 
 for package in $@
 do
