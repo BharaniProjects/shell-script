@@ -14,15 +14,15 @@ VALIDATE(){
         echo -e "ERROR :: $2... $R Failed.$N"
         exit 1
     else
-        echo -e "$G $2... $G success.$N"
+        echo -e "$2... $G success.$N"
     fi
 }
 if [ $ID -ne 0 ]
 then
-    echo "Please run the script as root access."
+    echo -e "$R Please run the script as root access.$N"
     exit 1
 else
-    echo "You are root user."
+    echo -e "$G You are root user.$N"
 fi
 
 dnf install mysql -y &>> $LOGFILE
