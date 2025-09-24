@@ -5,7 +5,7 @@ ID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
-Y=G="\e[33m"
+Y="\e[33m"
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
