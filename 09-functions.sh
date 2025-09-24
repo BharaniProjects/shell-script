@@ -3,12 +3,12 @@
 ID=$(id -u)
 
 VALIDATE(){
-    if [ $? -ne 0 ]
+    if [ $1 -ne 0 ]
     then
-        echo "Installing failed."
+        echo "ERROR :: $2... failed."
         exit 1
     else
-        echo "Installing success."
+        echo "$2... success."
     fi
 }
 if [ $ID -ne 0 ]
@@ -18,5 +18,11 @@ then
 else
     echo "You are root user."
 fi
+
 dnf install mysql -y
-VALIDATE
+
+VALIDATE $? "Installing mysql"
+
+dnf install git -y
+
+VALIDATE $? "Installing git"
